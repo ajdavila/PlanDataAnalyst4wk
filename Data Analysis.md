@@ -69,19 +69,30 @@ Objetivo semanal: dominar SELECT/JOINS/FILTER/AGGREGATIONS y empezar a pensar en
 |  | PM1 | Funciones de agregación (SUM, COUNT, AVG) + GROUP BY. | W3Schools SQL GROUP BY, HAVING. [^1_9] | KPIs: número de transacciones por cliente, importe total, clientes “high volume”. Guarda script. |
 |  | PM2 | Mini‑proyecto 1: “Visión 360 básica del cliente”. | Revisa tus tablas y consultas. | Construye un script que dado un `CustomerId` devuelva resumen de cuentas, nº de transacciones, importe total. Documenta en README. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Miércoles | AM | Subqueries simples y alias. | Apartado subqueries en SQLServerTutorial.Net. [^1_4] | 5 consultas con subqueries (clientes con importe total > media, etc.). |
 |  | PM1 | CTE básicas. | Tutorial CTE (SQLServerTutorial.Net). [^1_4] | Reescribe 3 subqueries como CTE para mejor legibilidad. |
 |  | PM2 | Introducción a índices y performance básica (execution plan). | Segmento de performance del curso “SQL Full Course for Beginners” (índices/plan de ejecución). [^1_10] | Crea índice en `Transactions` y compara tiempos/planes de ejecución de una consulta pesada (captura pantallas para portfolio). |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Jueves | AM | Vistas simples. | Sección Views en SQLServerTutorial.Net. [^1_4] | Crea vistas `vw_CustomerSummary` y `vw_AccountActivity`. |
 |  | PM1 | Procedimientos almacenados básicos. | Sección Stored Procedures. [^1_4] | Crea un SP `sp_GetCustomerRiskSnapshot` que encapsule tus KPIs básicos. |
 |  | PM2 | Caso de uso KYC/CDD: ¿qué datos necesitas? | Relee “me.txt” y piensa en procesos KYC/CDD. [^1_2] | Escribe en README un pequeño caso de uso KYC (inputs, outputs, métricas) y cómo tus consultas ayudan. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Viernes | AM | Repaso intensivo SQL semana. | Repaso apuntes y ejercicios. | Corrige scripts, añade comentarios, limpia nombres. |
 |  | PM1 | Test personal tipo “kata SQL”: 20 consultas mezcladas. | Usa ejercicios de W3Schools o inventados. [^1_9] | Escribe un solo archivo `week1-katas.sql` con todas las soluciones. |
 |  | PM2 | Empaquetar portfolio Semana 1. | Organiza tu repo GitHub: `/sql`, `/docs`. | Subir scripts, README Semana 1 + capturas SSMS. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Sábado | 5h | Consolidar SQL + mini dataset de fraude. | Revisa partes relevantes del “SQL Full Course for Beginners” (JOINS, GROUP BY, subqueries). [^1_10] | Busca/crea un CSV simple de transacciones con banderas de fraude (puede ser simulado) y carga en tu BD; crea 10 consultas orientadas a detección: top 10 transacciones por importe, clientes con múltiples países, etc. |
+
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Domingo | 5h | Proyecto mini “Transaction Risk Dashboard – SQL only”. | Reusa todo lo de la semana. | Crea un script que genere una tabla `CustomerRiskScore` calculada con reglas simples (ej: muchas transacciones internacionales = riesgo alto). Documenta la lógica. |
 
 ***
@@ -97,22 +108,32 @@ Objetivo semanal: entender OLTP vs dimensional, diseñar un esquema estrella par
 |  | PM1 | Diseñar modelo dimensional para KYC/CDD (fact transacciones, dim cliente, dim producto, dim país). | Lectura rápida sobre OLTP model y diseño. [^1_13] | Dibuja un star schema y guárdalo en `/models`. |
 |  | PM2 | Crear tablas dimensionales en SQL Server. | SQLServerTutorial.Net (CREATE TABLE, keys). [^1_4] | Crea `DimCustomer`, `DimAccount`, `DimDate`, `DimCountry`, `FactTransaction`. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Martes | AM | Conceptos básicos ETL (Extract, Transform, Load). | Notas propias + artículos ETL; foco conceptual. | Escribe un pequeño documento `etl-plan.md` explicando orígenes, transformaciones, destino. |
 |  | PM1 | Implementar ETL 1: carga desde tablas OLTP a dimensiones. | Usa INSERT…SELECT en SQL. [^1_4] | Script `etl_load_dimensions.sql` con lógica incremental simple. |
 |  | PM2 | Implementar ETL 2: carga de hechos (FactTransaction). | Igual que anterior. | Script `etl_load_fact.sql`. Añade controles básicos (contar filas, fechas). |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Miércoles | AM | Calidad de datos: validación, perfilado básico. | Revisar requisitos de “Validación, perfilado y control de calidad de datos”. [^1_2] | Crea queries para detectar nulos, duplicados, outliers en importes. |
 |  | PM1 | Reglas de calidad automáticas en SQL. | Usa CHECK constraints y queries de validación. [^1_4] | Script que marque registros sospechosos en tabla `DataQualityIssues`. |
 |  | PM2 | Mini‑proyecto “Data Quality para KYC”. | Todo lo anterior. | Documenta 5 reglas de calidad críticas (ej: país nulo, fecha de nacimiento incoherente) y cómo las chequeas en SQL. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Jueves | AM | Introducción suave a Python para ETL (si no estás cómoda, deja esto en pseudo código). | Revisa sintaxis básica de Python: lectura de CSV, conexión a SQL (puedes usar ejemplos genéricos). | Escribe un pequeño script (o pseudocódigo) `etl_python_outline.py` que leería CSV y consumiría SPs. |
 |  | PM1 | Automatización básica de ETL con SQL Server Agent (concepto). | Artículos sobre SQL Server Agent. [^1_11] | Escribe un plan de jobs (no hace falta implementarlo si no tienes entorno). |
 |  | PM2 | Refactor de scripts ETL. | Repaso y limpieza. | Organiza ETL en carpetas y agrega comentarios orientados a auditoría (muy importante en delitos financieros). |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Viernes | AM | Repaso modelado + ETL. | Relee tus notas. | Lista de “learnings” Semana 2. |
 |  | PM1 | Test personal: explicar modelo dimensional a un non‑technical. | Simula una presentación de 10 minutos. | Prepara 3 slides (pueden ser en papel) explicando por qué tu modelo ayuda a KYC. |
 |  | PM2 | Subida a portfolio. | GitHub/Drive. | Commit Semana 2 con modelos, scripts ETL y docs. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Sábado | 5h | Proyecto 2: “KYC Data Mart v1”. | Usa modelo dimensional + ETL. | Correr ETL completo (aunque sea con datos pequeños) y crear 5 consultas analíticas (por ejemplo, clientes de alto riesgo por país, volumen de transacciones sospechosas, etc). |
 | Domingo | 5h | Documentación orientada a auditoría. | Basado en tus experiencias de gobierno y compliance. [^1_1] | Escribir un documento de 2–3 páginas explicando: fuentes, linaje de datos, controles de calidad, y cómo el data mart soporta KYC/CDD. |
 
@@ -129,22 +150,32 @@ Objetivo semanal: entender Snowflake a nivel práctico (crear BD, esquemas, carg
 |  | PM1 | Crear BD y esquemas en Snowflake (puede ser trial). | Seguir ejemplo “Creating Your First Database And Schema”. [^1_5] | Crear `FINANCIAL_CRIME_LAB` con esquemas `RAW`, `CURATED`. |
 |  | PM2 | Cargar un CSV simple (transacciones). | Tutorial de carga de datos. [^1_5][^1_7] | Cargar dataset de ejemplo y validar cuentas/registros. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Martes | AM | Repaso SQL en Snowflake (ligeras diferencias). | Consultas básicas en Worksheet. [^1_5] | Reescribir 5 consultas de tu data mart en Snowflake. |
 |  | PM1 | Modelado de datos en Snowflake (dimensiones y hechos). | Apartado Data Modeling. [^1_5] | Crear tablas `DIM_CUSTOMER`, `FACT_TRANSACTION` equivalentes a SQL Server. |
 |  | PM2 | Conceptos de coste y performance (warehouses, clustering). | Sección Data Warehousing de Snowflake. [^1_5] | Toma notas de best practices (servirá más adelante cuando uses AWS/S3). |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Miércoles | AM | Introducción breve a AWS S3 y Glue (nivel conceptual). | Leer sobre S3 como data lake y Glue como ETL/orquestación (docs de AWS, no hace falta profundidad). | Dibuja un diagrama “S3 → Glue → Snowflake” o similar. |
 |  | PM1 | Plan de integración AWS–Snowflake (conceptual). | Basado en tu experiencia en cloud/DevOps. [^1_1] | Escribe un documento corto “Cómo integraría datos KYC desde AWS hacia Snowflake”. |
 |  | PM2 | Documentar sinergias con tu background de Hadoop/Big Data. | Revisa tu experiencia previa. [^1_1] | Escribe un párrafo explicando cómo tus skills de Hadoop/DevOps ayudan en este rol de datos de delitos financieros. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Jueves | AM | Introducción práctica a Power BI Desktop: importar datos desde SQL Server o CSV. | Tutorial básico de Power BI (docs de Microsoft o curso YouTube). | Crear primer reporte conectando a tu `FinancialCrimeLab`. |
 |  | PM1 | Visualizaciones básicas: tablas, gráficos de barras, KPIs. | Tutorial visualizaciones básicas. | Dashboard 1: “Operaciones KYC Overview”: nº clientes, transacciones por día, top países de riesgo. |
 |  | PM2 | Medidas básicas DAX (SUM, COUNTROWS, CALCULATE). | Tutorial DAX para principiantes (cualquier recurso gratuito). | Añadir medidas: total transacciones sospechosas, ratio sospechosas/total, etc. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Viernes | AM | Exportar dashboards + storytelling. | Revisa tus informes. | Preparar 3 vistas que podrías mostrar en una reunión. |
 |  | PM1 | Consolidar proyecto Snowflake + Power BI en portfolio. | Organizar repo. | Documentar casos de uso que cubre el dashboard. |
 |  | PM2 | Retro semanal y lista de gaps. | Reflexión. | Anotar qué se te hace más difícil (SQL avanzado, DAX, Snowflake, etc.) para priorizar en la Semana 4. |
 
+| Día | Franja | Objetivo principal | Recursos sugeridos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Sábado | 5h | Proyecto 3: “KYC \& Financial Crime Monitoring Dashboard”. | Usa Power BI + SQL Server/Snowflake. | Crear un informe más completo con filtros por país, segmento de cliente, canal; publicar capturas y explicación. |
 | Domingo | 5h | Simulación de presentación ejecutiva. | Basado en tu experiencia como líder. [^1_1] | Prepara un guion de 10–15 min para explicar a un Head of Financial Crime cómo tu data mart y dashboard ayudan a mejorar CDD y eficiencia operacional. |
 
@@ -161,22 +192,32 @@ Objetivo semanal: reforzar SQL avanzado (subqueries complejas, CTE recursivas, p
 |  | PM1 | Vistas complejas y seguridad de datos (column masking conceptual). | SQLServerTutorial.Net + notas propias. [^1_4] | Diseña vistas que expongan solo datos necesarios para analistas (cumpliendo KYC/privacidad). |
 |  | PM2 | Procedimientos almacenados con parámetros y lógica condicional. | Stored Procedures avanzados. [^1_4][^1_10] | SP `sp_GenerateKycDailyReport` que genere un resumen por día. |
 
+| Día | Franja | Objetivo | Recursos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Martes | AM | Triggers e integridad de datos. | Triggers tutorial. [^1_4][^1_10] | Crear un trigger que registre cambios críticos en tabla de clientes. |
 |  | PM1 | Indexación y performance tuning básico. | Segmentos de índices, ejecución de planes, 30 performance tips. [^1_10] | Identificar 3 consultas lentas y proponer índices/cambios. Documentar antes/después. |
 |  | PM2 | Documentación “SQL Performance Playbook” personal. | Tus notas. | Crear un documento con 10 reglas para escribir SQL eficiente en entornos de delitos financieros. |
 
+| Día | Franja | Objetivo | Recursos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Miércoles | AM | Repaso Snowflake + warehouse performance. | Relee secciones de data warehousing. [^1_5] | Anotar cómo trasladar tus aprendizajes de índices/particionamiento al mundo Snowflake (clustering, warehouses). |
 |  | PM1 | Revisión de ETL y calidad de datos con foco en rendimiento. | Scripts ETL. | Ajustar consultas para minimizar scans completos y mejorar uso de índices. |
 |  | PM2 | Añadir pruebas unitarias simples para SQL/ETL. | Notas propias. | Crear un conjunto de “test queries” que validen conteos esperados y reglas de calidad. |
 
+| Día | Franja | Objetivo | Recursos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Jueves | AM | Repaso Power BI + mini mejoras. | Dashboard actual. | Añadir 1–2 nuevas visuales centradas en productividad operativa (ej: tiempo medio de resolución de alertas, si tienes datos). |
 |  | PM1 | Ensayo de conversación técnica sobre tu portfolio. | Simula entrevista con jefe de Financial Crime Analytics. | Escribir respuestas a preguntas como: “¿Cómo aseguraste la calidad de los datos?” o “¿Cómo escalarías este modelo a Snowflake/AWS?”. |
 |  | PM2 | Refactor y limpieza de repo. | GitHub. | Reorganizar carpetas por proyectos: `/01_sql_basics`, `/02_etl_dim_model`, `/03_snowflake_bi`, `/04_sql_advanced`. |
 
+| Día | Franja | Objetivo | Recursos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Viernes | AM | Test final tipo “examen” 2 h (dividido en AM+PM). | Mezcla de tus ejercicios. | Parte 1: SQL puro (AM). |
 |  | PM1 | “Examen” parte 2. | Igual. | Parte 2: ETL/modelado/Snowflake/BI (PM1). |
 |  | PM2 | Cierre de 4 semanas y plan de acción para los 3 meses avanzados. | Reflexión. | Actualizar lista de fortalezas y debilidades para ajustar el plan avanzado. |
 
+| Día | Franja | Objetivo | Recursos | Ejercicio/Entrega |
+| :-- | :-- | :-- | :-- | :-- |
 | Sábado | 5h | Proyecto integrador “Financial Crime Analytics Lab v1”. | Combina todo. | 1) Modelo dimensional; 2) ETL; 3) KPIs en SQL; 4) Dashboard Power BI; 5) Documentación. |
 | Domingo | 5h | Descanso activo + lectura conceptual de IA/ML para fraude. | Artículos intro ML para fraude (reglas vs modelos). | Escribe ideas de modelos futuros (ej: logistic regression para propensión a fraude) que atacarás en los 3 meses avanzados. |
 
