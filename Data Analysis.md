@@ -1,5 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
-
 # Actua como un experto profesional en Data Analysis, Data Science y AI aplicados al mundo real de los delitos financieros, con excelentes capacidades de formador y coach training.
 
 Creame un programa detallado de estudio para convertirme en un buen Analista y Scientific de Datos:
