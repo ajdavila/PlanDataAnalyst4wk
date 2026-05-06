@@ -14,9 +14,10 @@ KR2: Embed controls and risk awareness into solutions
 Implement controls within code and pipelines (validation, monitoring, alerts)
 Ensure secure handling of data and compliance with standards
 Support early detection of issues through effective monitoring
+Driving continued improvement in our risk management capabilities
 
 KR3: Deliver reliably against commitments
-Deliver ≥95% of committed work on time
+Deliver ≥95% of committed work on time (Jira Tickets on time)
 Accurately estimate and manage delivery of tasks
 Proactively identify and escalate risks or blockers
 
@@ -24,6 +25,7 @@ KR4: Strengthen engineering standards and documentation
 Maintain clear and up-to-date technical documentation
 Ensure consistency in coding standards and best practices
 Contribute to improving team processes and ways of working
+
 
 ------
 Objective 2: Drive Efficient and Value-Focused Delivery
@@ -33,24 +35,29 @@ Lead delivery of solutions that improve performance, reduce cost, and create bus
 
 Key Results
 KR5: Deliver transformation and migration initiatives
-Contribute to key transformation programmes (e.g. cloud migration)
+Contribute to key transformation programmes (e.g. AWS cloud migration)
 Ensure smooth transition from legacy to modern platforms
 Support decommissioning of old systems
+Deliver transformation target in AWS migration work, specifically Strategic pKYC 
 
 KR6: Improve system performance and efficiency
 Reduce runtime, improve reliability, and optimise cost
 Identify and implement performance improvements
 Minimise operational overhead and support effort
-KR7: Improve delivery efficiency
+Create a Security culture in the team including best practice
 
+KR7: Improve delivery efficiency
 Reduce lead time from development to production
 Increase automation in testing and deployment
 Improve development workflows and tooling
+Improve controls-by-design (testing, monitoring, resilience, security)
+Implement early-warning alerts (freshness, completeness, ETL health, data quality) in pipelines and datasets
 
 KR8: Lead and mentor others
-Support and coach junior developers
+Support, coach junior developers and raising engineering standards
 Promote best practices and high engineering standards
 Contribute to building a strong team culture
+Make workshops or webinar that skillup the knowledege of the team
 
 ----
 Objective 3: Leverage AI and Automation to Improve Delivery
@@ -62,9 +69,10 @@ Key Results
 KR9: Increase adoption of AI tools
 Use approved AI tools to support development (coding, testing, documentation)
 Improve speed and quality of delivery using AI
+Develop some MCP that avoid repetitives tasks (e.g.rutines sql queries)
 
 KR10: Deliver efficiency through automation
-Automate repetitive development and operational tasks
+Automate repetitive development and operational tasks (e.g. use devin or maisa)
 Improve quality through automated checks and validation
 Demonstrate measurable improvements in productivity or reliability
 Overall Focus Areas for a Senior Developer
